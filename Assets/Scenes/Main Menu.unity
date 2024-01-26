@@ -435,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &57290789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3429,9 +3429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pages:
-  - {fileID: 57290788}
-  - {fileID: 1963121139}
-  - {fileID: 716857571}
   - {fileID: 1148673399}
   _nextButton: {fileID: 2050317476}
   _previousButton: {fileID: 1926290485}
@@ -3450,7 +3447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1148673400
 RectTransform:
   m_ObjectHideFlags: 0
