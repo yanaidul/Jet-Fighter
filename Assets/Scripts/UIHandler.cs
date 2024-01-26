@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIHandler : MonoBehaviour
 {
     [SerializeField] private GameObject _victoryUI;
+    [SerializeField] private GameObject _newHighScoreUI;
     [SerializeField] private GameObject _gameoverUI;
     [SerializeField] private GameObject _pauseUI;
 
@@ -16,6 +17,7 @@ public class UIHandler : MonoBehaviour
     private void DisableAllUI()
     {
         _victoryUI.SetActive(false);
+        if(_newHighScoreUI != null) _newHighScoreUI.SetActive(false);
         _gameoverUI.SetActive(false);
         _pauseUI.SetActive(false);
     }
@@ -23,7 +25,8 @@ public class UIHandler : MonoBehaviour
     public void OnVictoryUI()
     {
         DisableAllUI();
-        _victoryUI.SetActive(true);
+        if (ScoreManager.GetInstance().TotalScore > PlayerPrefs.GetInt("Highscore", 0) && _newHighScoreUI != null) _newHighScoreUI.SetActive(true);
+        else _victoryUI.SetActive(true);
         Time.timeScale = 0;
     }
 

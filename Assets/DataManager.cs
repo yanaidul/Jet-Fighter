@@ -19,7 +19,6 @@ public class DataManager : Singleton<DataManager>
 
     public void LoadPlayerPrefs()
     {
-
         _highscore = PlayerPrefs.GetInt("Highscore", 0);
         _playerName = PlayerPrefs.GetString("PlayerName", "Player1");
     }

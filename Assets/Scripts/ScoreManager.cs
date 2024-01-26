@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : Singleton<ScoreManager>
 {
     [SerializeField] private int _totalScore = 0;
     [SerializeField] private int _scoreToAdd;
     [SerializeField] private GameEvent _onChangeScore;
     [SerializeField] private PlayerDataScriptableObject _playerData;
+
+    public int TotalScore => _totalScore;
 
     private void Start()
     {

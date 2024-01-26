@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
+    [SerializeField] private PlayerDataScriptableObject _playerData;
     [SerializeField] GameEventNoParam _onNextLevelEvent;
     [SerializeField] GameEventNoParam _onOnReturnToLevel1Event;
 
@@ -27,6 +28,7 @@ public class SceneHandler : MonoBehaviour
     {
         Time.timeScale = 1;
         if(BGM.instance != null) BGM.instance.DestroyBGMGameObject();
+        _playerData.ResetData();
         SceneManager.LoadScene(0);
     }
 

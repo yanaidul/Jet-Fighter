@@ -7,9 +7,6 @@ public class HighScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _highScoreText;
     [SerializeField] private TextMeshProUGUI _playerNameText;
 
-    private int highscore;
-    private string playerName;
-
     private void Start()
     {
         OnLoad();
@@ -36,7 +33,7 @@ public class HighScoreManager : MonoBehaviour
             return;
         }
 
-        _highScoreText.SetText(highscore.ToString());
-        _playerNameText.SetText(playerName);
+        _highScoreText.SetText(DataManager.GetInstance().HighScore.ToString());
+        _playerNameText.SetText(DataManager.GetInstance().PlayerName);
     }
 }
