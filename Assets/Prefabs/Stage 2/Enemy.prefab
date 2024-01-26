@@ -48,6 +48,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -81,6 +100,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -126,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c66b6cb34f4b65429f51f334200d2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onShoot: {fileID: 0}
   _bulletPrefab: {fileID: 8676356568514914348, guid: 801b299f5138635469476d1e670a4f45, type: 3}
   _spawnPoint: {fileID: 8315677554866788851}
   _bulletSpawnInterval: 4
@@ -204,7 +230,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 4179863dea81dc24ea08cecda8779dda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1a9ceb8d44c2184489c6575100ca37d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,10 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySprite:
-  - {fileID: 21300000, guid: 4179863dea81dc24ea08cecda8779dda, type: 3}
-  - {fileID: 21300000, guid: 909af287af82d744f90c42ebbfb54baf, type: 3}
-  - {fileID: 21300000, guid: 44ac457bcb9f96241b9313fdbdc34bef, type: 3}
-  - {fileID: 21300000, guid: 54d06f41d4b77284f8a02467851b9134, type: 3}
+  - {fileID: 21300000, guid: 1a9ceb8d44c2184489c6575100ca37d7, type: 3}
+  - {fileID: 21300000, guid: bde3191c6af1f134896155c3a6bcbbb2, type: 3}
+  - {fileID: 21300000, guid: 4815f3f5b09b46f4fb1bd8d025583ab0, type: 3}
+  - {fileID: 21300000, guid: da242c56ba0081a47abc6a30ce05890f, type: 3}
 --- !u!1 &7735823880705301859
 GameObject:
   m_ObjectHideFlags: 0

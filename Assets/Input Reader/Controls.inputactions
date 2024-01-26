@@ -17,7 +17,7 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
+                    "name": "Arrow",
                     "id": "f57017b9-259d-42e6-a6c5-89e68258989e",
                     "path": "2DVector",
                     "interactions": "",
@@ -30,7 +30,7 @@
                 {
                     "name": "up",
                     "id": "412c4950-5b64-4a09-91a2-20976517db3f",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -41,7 +41,7 @@
                 {
                     "name": "down",
                     "id": "43f929e7-0273-4f66-a716-42afac21443f",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -52,7 +52,7 @@
                 {
                     "name": "left",
                     "id": "1a774d4d-d283-4d45-a006-bafa7d5c5739",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",
@@ -63,7 +63,7 @@
                 {
                     "name": "right",
                     "id": "0f8b2652-b468-44c5-8ddb-e0c1831c5ecc",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "Mouse & Keyboard",

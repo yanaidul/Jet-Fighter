@@ -48,6 +48,25 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -81,6 +100,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -205,7 +230,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 72000a20824a0f64abe54600bd6cde5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f5a93a271dae7d24bb0318b4c3f2680f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -243,10 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemySprite:
-  - {fileID: 21300000, guid: 72000a20824a0f64abe54600bd6cde5f, type: 3}
-  - {fileID: 21300000, guid: 8b30498ce3e9e4840af6d612760f7ca6, type: 3}
-  - {fileID: 21300000, guid: d8cf4e49e2fe7e545a0a1f1bddb084e0, type: 3}
-  - {fileID: 21300000, guid: 8d4b041e475b56944a6da4fc394fad70, type: 3}
+  - {fileID: 21300000, guid: f5a93a271dae7d24bb0318b4c3f2680f, type: 3}
+  - {fileID: 21300000, guid: ee6df00841cd1b649b3aa338ba1c20de, type: 3}
+  - {fileID: 21300000, guid: 87d9b77eecb6e1c40a7ff50397cc2e29, type: 3}
+  - {fileID: 21300000, guid: 12549a84bcd7d754584c27f9fe20503b, type: 3}
 --- !u!1 &7735823880705301859
 GameObject:
   m_ObjectHideFlags: 0
