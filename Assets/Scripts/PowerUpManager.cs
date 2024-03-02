@@ -29,11 +29,13 @@ public class PowerUpManager : MonoBehaviour
     }
     #endregion
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     private void Start()
     {
         NumberOfActivatedSupport = _playerData.SupportCount;
     }
 
+    //Function yang terpanggil untuk set total support pesawat pada saat game dimulai
     private void SetTotalOfSupport(int value)
     {
         for (int i = 0; i < _supportUnitReference.Length; i++)
@@ -49,7 +51,7 @@ public class PowerUpManager : MonoBehaviour
             
         }
     }
-
+    //Function yang terpanggil untuk save support data
     public void SaveSupportData()
     {
         _playerData.SupportCount = NumberOfActivatedSupport;

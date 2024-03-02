@@ -11,10 +11,12 @@ public class BulletSpawner : MonoBehaviour
 
     private float _bulletSpawnTimer = 0f;
 
+    //Function yang di panggil setiap waktu berlangsungnya game
     private void Update()
     {
         _bulletSpawnTimer += Time.deltaTime;
 
+        //if statement untuk menghitung timer kapan bullet dimunculkan dari pesawat, bila _bulletspawntimer sudah melebihi _bulletSpawnInterval (jumlah _bulletSpawnInterval disesuaikan dengan variable diatas) maka method SpawnBullet() akan terpanggil
         if (_bulletSpawnTimer >= _bulletSpawnInterval)
         {
             SpawnBullet();
@@ -22,6 +24,7 @@ public class BulletSpawner : MonoBehaviour
         }
     }
 
+    //Function untuk memunculkan game object bullet dengan posisi yang sesuai dengan spawn point gameobject
     public void SpawnBullet()
     {
         GameObject bullet = ObjectPool.Instance.GetObjectFromPool(_bulletPrefab);

@@ -7,8 +7,9 @@ public class PageSwitcher : MonoBehaviour
     [SerializeField] private GameObject _nextButton;
     [SerializeField] private GameObject _previousButton; 
 
-    private int _currentPageIndex = 0; 
+    private int _currentPageIndex = 0;
 
+    //Function yang terpanggil pada saat gameobject aktif
     private void OnEnable()
     {
         _currentPageIndex = 0;
@@ -16,6 +17,7 @@ public class PageSwitcher : MonoBehaviour
         UpdateButtonStates(); 
     }
 
+    //Function untuk pindah ke UI halaman selanjutnya
     public void ShowNextPage()
     {
         int nextPageIndex = _currentPageIndex + 1;
@@ -27,6 +29,7 @@ public class PageSwitcher : MonoBehaviour
         }
     }
 
+    //Function untuk pindah ke UI halaman sebelumnya
     public void ShowPreviousPage()
     {
         int previousPageIndex = _currentPageIndex - 1;
@@ -38,6 +41,7 @@ public class PageSwitcher : MonoBehaviour
         }
     }
 
+    //Function untuk menampilkan halaman UI yang spesifik beserta indexnya
     private void ShowPage(int pageIndex)
     {
         for (int i = 0; i < _pages.Length; i++)
@@ -50,6 +54,7 @@ public class PageSwitcher : MonoBehaviour
         _currentPageIndex = pageIndex;
     }
 
+    //Function untuk update state button halaman selanjutnya dan halaman sebelumnya (contoh button hlmn sebelumnya mati bila page index 0, dan aktif ketika page index diatas 0. Hal yang serupa berlaku juga untuk button halaman selanjutnya)
     private void UpdateButtonStates()
     {
         if (_nextButton != null)

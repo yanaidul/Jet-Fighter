@@ -7,6 +7,7 @@ public class UI_Health : MonoBehaviour
     [SerializeField] private GameObject[] _health;
     [SerializeField] private int _initHealth;
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     private void Start()
     {
         for (int i = 0; i < _health.Length; i++)
@@ -22,6 +23,7 @@ public class UI_Health : MonoBehaviour
         }
     }
 
+    //Function yang terpanggil untuk mengubah tampilan UI total health player
     public void OnChangeHealthUI(Component sender, object data)
     {
         if (data is int)

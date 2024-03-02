@@ -10,9 +10,10 @@ public class BackgroundScrolling : MonoBehaviour
 
     private float _offset;
 
-
+    //Function yang di panggil setiap jeda waktu 0.02 detik selama berlangsungnya game
     private void FixedUpdate()
     {
+        //loop untuk menggerakkan semua komponen background  sesuai dengan variable speed diatas (_eachComponentScrollSpeed dan _additionalScrollSpeed)
         for (int i = 0; i < _backgroundComponents.Length; i++)
         {
             if (!_backgroundComponents[i].TryGetComponent<Renderer>(out Renderer renderer)) return;

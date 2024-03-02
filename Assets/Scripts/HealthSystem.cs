@@ -25,11 +25,13 @@ public class HealthSystem : MonoBehaviour, IDamageable
         }
     }
 
+    //Function yang terpanggil pada saat gameobject aktif
     public virtual void OnEnable()
     {
         CurrentHealth = _initHealth;
     }
 
+    //Function yang dipanngil untuk membuat darah musuh berkurang
     public virtual void TakeDamage(int damage)
     {
         CurrentHealth -= damage;

@@ -9,6 +9,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
 
     private Controls _controls;
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     void Start()
     {
         _controls = new Controls();
@@ -16,11 +17,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayerActions
         _controls.Player.Enable();
     }
 
+    //Function yang terpanggil bila gameobject dihancurkan
     private void OnDestroy()
     {
         _controls.Player.Disable();
     }
 
+    //Function yang terpanggil bila gerakan onMove (yaitu dari arrow keys) terpanngil
     public void OnMove(InputAction.CallbackContext context)
     {
         MovementValue = context.ReadValue<Vector2>();

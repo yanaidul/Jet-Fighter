@@ -15,6 +15,7 @@ public class PlayerHealth : HealthSystem, IDamageable, IHealable
         _onChangePlayerHealth.Raise(this, CurrentHealth);
     }
 
+    //Function yang dipanngil untuk membuat darah player berkurang
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
@@ -27,6 +28,7 @@ public class PlayerHealth : HealthSystem, IDamageable, IHealable
         }
     }
 
+    //Function yang dipanngil untuk reset data dan menampilkan game over bila player mati
     private void Death()
     {
         gameObject.SetActive(false);
@@ -34,12 +36,14 @@ public class PlayerHealth : HealthSystem, IDamageable, IHealable
         _onGameOver.Raise();
     }
 
+    //Function yang dipanggil untuk menambahkan darah player
     public void Heal(int amount)
     {
         CurrentHealth += amount;
         _onChangePlayerHealth.Raise(this, CurrentHealth);
     }
 
+    //Function yang dipanggil untuk menyimpan darah player ke player data (untuk dibawa ke scene selanjutnya)
     public void SaveHealthData()
     {
         _playerData.TotalHealth = CurrentHealth;

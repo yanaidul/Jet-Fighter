@@ -13,11 +13,13 @@ public class PathFinder : MonoBehaviour
     private float _delta;
     private int _targetPathIndex;
 
+    //Function yang di panggil pada saat game dijalankan
     private void Awake()
     {
         _enemySpawner = FindObjectOfType<EnemySpawner>();
     }
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     private void Start()
     {
         _waveConfig = _enemySpawner.GetCurrentWave();
@@ -25,11 +27,13 @@ public class PathFinder : MonoBehaviour
         transform.position = _wayPoints[_wayPointIndex].position;
     }
 
+    //Function yang di panggil setiap waktu berlangsungnya game
     private void Update()
     {
         FollowPath();
     }
 
+    //Function yang di panggil untuk membuat pesawat musuh bergerak sesuai dengan waypoint nya
     private void FollowPath()
     {
         if (_wayPointIndex < _wayPoints.Count - _targetPathIndex)
@@ -45,11 +49,13 @@ public class PathFinder : MonoBehaviour
         }
     }
 
+    //Function yang di panggil untuk mengubah target path index
     public void SetTargetPathIndex(int index)
     {
         _targetPathIndex = index;
     }
 
+    //Function yang di panggil untuk membuat pesawat musuh mengupdate wave confignya dengan current wave dan waypoints sekarang
     public void UpdateToCurrentWave()
     {
         _wayPointIndex = 0;

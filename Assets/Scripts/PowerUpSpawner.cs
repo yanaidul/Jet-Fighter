@@ -11,6 +11,7 @@ public class PowerUpSpawner : MonoBehaviour
     private int _randomizedPowerUpIndex;
     private float _addtionalRandomizedY;
 
+    //Function yang di panggil setiap waktu berlangsungnya game
     private void Update()
     {
         _powerUpSpawnTimer += Time.deltaTime;
@@ -21,7 +22,8 @@ public class PowerUpSpawner : MonoBehaviour
             _powerUpSpawnTimer = 0f;
         }
     }
-    
+
+    //Function yang di panggil untuk spawn power up
     private void SpawnPowerUp()
     {
         _randomizedPowerUpIndex = Random.Range(0, _powerUpPrefabs.Length);

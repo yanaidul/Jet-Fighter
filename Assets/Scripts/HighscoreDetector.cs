@@ -8,6 +8,7 @@ public class HighscoreDetector : MonoBehaviour
 {
     [SerializeField] private TMP_InputField _nameInputField;
 
+    //Function untuk menyimpan highscore baru
     public void OnSaveDataToHighscore()
     {
 

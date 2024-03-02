@@ -10,6 +10,7 @@ public class DataManager : Singleton<DataManager>
     public int HighScore => _highscore;
     public string PlayerName => _playerName;
 
+    //Function untuk save player data (highscore, playername)
     public void SavePlayerPrefs(int highScore, string playerName)
     {
         PlayerPrefs.SetInt("Highscore", highScore);
@@ -17,6 +18,7 @@ public class DataManager : Singleton<DataManager>
         PlayerPrefs.Save();
     }
 
+    //Function untuk load player data (highscore, playername)
     public void LoadPlayerPrefs()
     {
         _highscore = PlayerPrefs.GetInt("Highscore", 0);

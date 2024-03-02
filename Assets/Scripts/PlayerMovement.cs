@@ -14,16 +14,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _minBounds;
     private Vector2 _maxBounds;
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     private void Start()
     {
         InitBounds();
     }
 
+    //Function yang di panggil setiap waktu berlangsungnya game
     private void Update()
     {
         HandleMovement(Time.deltaTime);
     }
 
+    //Function yang di panggil untuk mendeteksi batas posisi world dari perspektif kamera
     private void InitBounds()
     {
         _mainCamera = Camera.main;
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _maxBounds = _mainCamera.ViewportToWorldPoint(new Vector2(1, 1));
     }
 
+    //Function yang di panggil untuk membuat pesawat player tidak dapat keluar kamera
     private void HandleMovement(float deltaTime)
     {
         _newPos = _inputReader.MovementValue * deltaTime * _moveSpeed;

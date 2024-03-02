@@ -10,6 +10,7 @@ public class UI_Score : MonoBehaviour
 
     private string _formattedScore;
 
+    //Function yang terpanggil untuk mengubah tampilan UI score player dengan format "0000000000"
     public void OnChangeScoreText(Component sender, object data)
     {
         if (data is int)
@@ -19,6 +20,7 @@ public class UI_Score : MonoBehaviour
         }
     }
 
+    //Function yang terpanggil untuk mengubah tampilan UI score player tanpa format
     public void OnChangeScoreTextWithoutFormat(Component sender, object data)
     {
         if (data is int)

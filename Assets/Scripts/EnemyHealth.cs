@@ -7,6 +7,7 @@ public class EnemyHealth : HealthSystem,IDamageable
     [SerializeField] private GameEvent _onChangeEnemyHealth;
     [SerializeField] private GameEventNoParam _onEnemyDefeated;
 
+    //Function yang dipanngil untuk membuat darah musuh berkurang
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);

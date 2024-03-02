@@ -9,11 +9,13 @@ public class UIHandler : MonoBehaviour
     [SerializeField] private GameObject _gameoverUI;
     [SerializeField] private GameObject _pauseUI;
 
+    //Function yang terpanggil bila game dimulai
     private void Awake()
     {
         Time.timeScale = 1;
     }
 
+    //Function yang terpanggil untuk menonaktifkan semua UI canvas (gameover,pause,victory)
     private void DisableAllUI()
     {
         _victoryUI.SetActive(false);
@@ -22,6 +24,7 @@ public class UIHandler : MonoBehaviour
         _pauseUI.SetActive(false);
     }
 
+    //Function yang terpanggil untuk menampilkan victory UI
     public void OnVictoryUI()
     {
         DisableAllUI();
@@ -30,6 +33,7 @@ public class UIHandler : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    //Function yang terpanggil untuk menampilkan game over UI
     public void OnGameOverUI()
     {
         DisableAllUI();
@@ -37,6 +41,7 @@ public class UIHandler : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    //Function yang terpanggil untuk menampilkan pause UI
     public void OnPauseUI()
     {
         DisableAllUI();
@@ -45,6 +50,7 @@ public class UIHandler : MonoBehaviour
 
     }
 
+    //Function yang terpanggil untuk melanjutkan permainan setelah kembali dari pause
     public void OnResume()
     {
         DisableAllUI();

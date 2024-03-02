@@ -11,9 +11,10 @@ public class BGM : MonoBehaviour
 
     public bool isDestroyOnLoad;
 
-
+    //Function yang di panggil pada saat game dijalankan
     private void Awake()
     {
+        //Singkatnya kode dibawah ini di implement untuk membuat gameobject dengan script ini menjadi tetap ada setiap perpindahan scene (gameobject akan hilang setelah perpindahan scene bila code ini tidak ada)
         if (isDestroyOnLoad) return;
         if (instance == null)
         {
@@ -26,8 +27,10 @@ public class BGM : MonoBehaviour
         }
     }
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     private void Start()
     {
+        //Intialize music BGM dengan bgm yg diinginkan,setting, dan volume
         _bgmSource.clip = _bgmClip;
         _bgmSource.loop = true;
         SetBGMVolume(_bgmVolume);
@@ -38,33 +41,38 @@ public class BGM : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
+    //Function untuk set volume bgm
     public void SetBGMVolume(float volume)
     {
         _bgmSource.volume = volume;
     }
 
+    //Function untuk pause bgm
     public void PauseBGM()
     {
         _bgmSource.Pause();
     }
 
+    //Function untuk memainkan bgm
     public void PlayBGM()
     {
         _bgmSource.Play();
     }
 
+    //Function untuk unpause bgm
     public void UnpauseBGM()
     {
 
         _bgmSource.UnPause();
     }
 
+    //Function untuk stop bgm
     public void StopBGM()
     {
         _bgmSource.Stop();
     }
 
+    //Function untuk menghancurkan gameobject bgm
     public void DestroyBGMGameObject()
     {
         Destroy(gameObject);

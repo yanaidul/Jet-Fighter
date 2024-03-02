@@ -9,17 +9,20 @@ public class EnemySpawner : MonoBehaviour
     private WaveConfigSO _currentWave;
     private int _currentWaveIndex = 0;
 
+    //Function yang terpanggil bila game dimulai, tepatnya setelah awake
     void Start()
     {
         //StartCoroutine(SpawnEnemyWaves());
         StartCoroutine(SpawnWave());
     }
 
+    //Function yang dipanggil untuk mengreturn WaveConfig yang digunakan (waveconfig berbeda-beda setiap wavenya)
     public WaveConfigSO GetCurrentWave()
     {
         return _currentWave;
     }
 
+    //Function yang dipanggil untuk spawn wave of enemies
     IEnumerator SpawnWave()
     {
         yield return new WaitForSeconds(0.5f);
@@ -39,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+    //Function yang dipanggil untuk spawn wave selanjutnya (bila enemy wave sekarang sudah habis)
     public void SpawnNextWave()
     {
         if(_currentWaveIndex < _waveConfigs.Count)
@@ -52,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
+    //Function untuk membuat musuh bergerak ke target yang sudah di tentukan
     private void AssignEnemyTargetPathIndex(GameObject enemy, WaveConfigSO wave, int index)
     {
         if(wave.GetEnemyCount() < wave.GetWayPoints().Count)
@@ -66,29 +71,11 @@ public class EnemySpawner : MonoBehaviour
         
     }
 
+    //Function untuk membuat musuh mengupdate path findernya (biar tidak sama terus)
     private void UpdateEnemyWave(GameObject enemy)
     {
         if (!enemy.TryGetComponent<PathFinder>(out PathFinder enemyPath)) return;
         enemyPath.UpdateToCurrentWave();
     }
 
-    //IEnumerator SpawnEnemyWaves()
-    //{
-    //    foreach (WaveConfigSO wave in _waveConfigs)
-    //    {
-    //        _currentWave = wave;
-
-    //        for (int i = 0; i < _currentWave.GetEnemyCount(); i++)
-    //        {
-    //            GameObject enemy = ObjectPool.Instance.GetObjectFromPool(_currentWave.GetEnemyPrefab(i));
-    //            enemy.transform.position = _currentWave.GetStartingWayPoint().position;
-    //            enemy.transform.rotation = Quaternion.identity;
-
-    //            AssignEnemyTargetPathIndex(enemy, wave, i);
-    //            yield return new WaitForSeconds(_currentWave.GetRandomSpawnTime());
-    //        }
-    //        yield return new WaitForSeconds(_timeBetweenWaves);
-    //    }
-
-    //}
 }

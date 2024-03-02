@@ -14,17 +14,20 @@ public class Bullet : MonoBehaviour
     public float BulletSpeed => _bulletSpeed;
     #endregion
 
+    //Function yang terpanggil pada saat gameobject aktif
     private void OnEnable()
     {
         StartCoroutine(OnSetInactive());
     }
 
+    //Function yang terpanggil pada saat gameobject peluru muncul dan memberikan gerakan ke peluru
     public void LaunchBullet()
     {
         if (!TryGetComponent<Rigidbody2D>(out Rigidbody2D rb)) return;
         rb.velocity = gameObject.transform.right * _bulletSpeed;
     }
 
+    //Function yang terpanggil bila ada collission dengan pesawat player/musuh
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.TryGetComponent<HealthSystem>(out HealthSystem health)) return;
@@ -39,6 +42,7 @@ public class Bullet : MonoBehaviour
         powerup.NumberOfActivatedSupport--;
     }
 
+    //Function untuk memunculkan VFX ledakan
     private void TriggerVFXExplosion()
     {
         GameObject explosion = ObjectPool.Instance.GetObjectFromPool(_vfxExplosion);
@@ -46,6 +50,7 @@ public class Bullet : MonoBehaviour
         explosion.transform.rotation = transform.rotation;
     }
 
+    //Function untuk menonaktifkan peluru secara automatis dalam set interval waktu tertentu
     IEnumerator OnSetInactive()
     {
         yield return new WaitForSeconds(_bulletLifeTime);
